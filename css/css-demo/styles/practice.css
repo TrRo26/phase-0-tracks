@@ -1,0 +1,25 @@
+#contact-info {
+	font-size: .8em;
+}
+
+.job {
+	background: #e9e5dc;
+	border-radius: 10px;
+	padding: 1px;
+	margin-top: 10px;
+}
+
+.unlist {
+	font-size: .8em;
+}
+
+#personal-objective > p {
+	font-size: 20px;
+}
+
+/* The ">" used above on line 16 will only target first child p elements under this id (this is technically unessessary in this particular situation as the selector only contains one child)
+*/
+
+#resume-title:hover {
+	background-color: red;
+}
