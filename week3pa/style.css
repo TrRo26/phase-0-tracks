@@ -1,0 +1,51 @@
+body {
+	font-family: garamond;
+	font-size: 12px;
+	background-color: SeaShell;
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+.mainp {
+	border: solid; 1px;
+	padding: 10px;
+	margin: 10px;
+	background-color: SkyBlue;
+	font-style: italic;
+}
+
+.One {
+	display: inline-block; 
+}
+main {
+	vertical-align: top;
+	position: relative;
+	width: 80%;
+}
+nav {
+	vertical-align: top;
+	position: absolute;
+	width: 20%;
+}
+
+#side ul {
+	font-size: 16px;
+	margin-top: 30px;
+	list-style-type: circle;
+}
+
+h1, h2 {
+	letter-spacing: 2px;
+}
+
+h1:hover, h2:hover {
+	color: red;
+}
+
+th {
+	text-decoration: underline;
+}
+
+tr:nth-child(even) {
+	background-color: beige;
+}
