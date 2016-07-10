@@ -9,14 +9,6 @@ cite {
   margin-top: 10px;
 }
 
-#external-links ul {
-  list-style-type: none;
-  padding-left: 0px;
-}
-
-/* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
-but it's optional! */
 img {
   width: 100%;
 }
@@ -30,3 +22,54 @@ figcaption {
   font-style: italic;
   text-align: right;
 }
+
+
+body { 
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.One {
+  display: inline-block;
+  padding: 10px;
+}
+
+#external-links {
+  vertical-align: top
+  width: 20%;
+  position: relative;
+}
+
+main {
+  vertical-align: top
+  width: 80%;
+  position: absolute;
+  min-width: 300px;
+}
+
+
+
+
+
+
+/*
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+  }
+}
+*/
+
+@media screen and (max-width: 300px) {
+  section {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 250px) {
+  h1 {
+    font-size: 120%;
+  }
+}
+
+
