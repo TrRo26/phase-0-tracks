@@ -47,6 +47,16 @@ numemp.times do
 			puts "*** Learn how to follow instructions. We're going to assume you entered 'Yes' ***"
 	end
 
+	puts ""
+	puts "Please name any allergies you have one at a time (type 'Done' when finished)"
+	until ((allergy = gets.chomp) == "done")
+		 if allergy == "sunshine"
+			garlic = false
+			ins = true
+			break
+		end
+	end 
+
 	case
 		when zero = (name == "drake cula") || (name == "tu fang")
 			puts ""
@@ -66,6 +76,8 @@ numemp.times do
 	end
 end
 
+puts ""
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 __END__
 
