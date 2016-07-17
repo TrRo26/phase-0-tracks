@@ -1,60 +1,70 @@
 
-
-puts "What is your name?"
-name = gets.chomp.downcase
-
 puts ""
-puts "How old are you in years?"
-age = gets.chomp.to_i
+puts "How many employees would you like to process?"
+numemp = gets.chomp.to_i
 
-puts ""
-puts "What year were you born?"
-birthyr = gets.chomp.to_i
+numemp.times do 
+	puts ""
+	puts "What is your name?"
+	name = gets.chomp.downcase
 
-agebirthyr = (age == (2016 - birthyr))
+	puts ""
+	puts "How old are you in years?"
+	age = gets.chomp.to_i
 
-puts ""
-puts "Our company cafeteria serves garlic bread. Should we order some for you? (Please enter 'Yes' or 'No')"
-garlic = gets.chomp.downcase
+	puts ""
+	puts "What year were you born?"
+	birthyr = gets.chomp.to_i
 
-case garlic
-	when "yes"
-		garlic = true
-	when "no"
-		garlic = false
-	else
-		puts ""
-		puts "*** Learn how to follow instructions. We're going to assume you entered 'Yes' ***"
-		puts ""
+	agebirthyr = (age == (2016 - birthyr))
+
+	puts ""
+	puts "Our company cafeteria serves garlic bread. Should we order some for you? (Please enter 'Yes' or 'No')"
+	garlic = gets.chomp.downcase
+
+	case garlic
+		when "yes"
+			garlic = true
+		when "no"
+			garlic = false
+		else
+			puts ""
+			puts "*** Learn how to follow instructions. We're going to assume you entered 'Yes' ***"
+			puts ""
+	end
+
+	puts ""
+	puts "Would you like to enroll in the company's health insurance? (Please enter 'Yes' or 'No')"
+	ins = gets.chomp.downcase
+
+	case ins
+		when "yes"
+			ins = true
+		when "no"
+			ins = false
+		else
+			puts ""
+			puts "*** Learn how to follow instructions. We're going to assume you entered 'Yes' ***"
+	end
+
+	case
+		when zero = (name == "drake cula") || (name == "tu fang")
+			puts ""
+			puts "Definitely a vampire."
+		when first = ((garlic || ins) && agebirthyr)
+			puts ""
+			puts "Probably not a vampire."
+		when second = ((garlic == ins) == false)
+			puts ""
+			puts "Probably a vampire."
+		when third = ((garlic || ins) == agebirthyr)
+			puts ""
+			puts "Almost certainly a vampire."
+		else
+			puts ""
+			puts "Results inconclusive."
+	end
 end
-
-puts ""
-puts "Would you like to enroll in the company's health insurance? (Please enter 'Yes' or 'No')"
-ins = gets.chomp.downcase
-
-case ins
-	when "yes"
-		ins = true
-	when "no"
-		ins = false
-	else
-		puts ""
-		puts "*** Learn how to follow instructions. We're going to assume you entered 'Yes' ***"
-end
-
-case
-	when zero = (name == "drake cula") || (name == "tu fang")
-		puts "Definitely a vampire."
-	when first = ((garlic || ins) && agebirthyr)
-		puts "Probably not a vampire."
-	when second = ((garlic == ins) == false)
-		puts "Probably a vampire."
-	when third = ((garlic || ins) == agebirthyr)
-		puts "Almost certainly a vampire."
-	else
-		puts "Results inconclusive."
-end
-
 
 
 __END__
