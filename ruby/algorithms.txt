@@ -1,0 +1,42 @@
+Robot ---> Elevator Algorithm 
+
+(making assumption that robot can see, is starting directly in front of and facing the elevator, and that no other robots or humans are using this same elevator)
+
+- If elevator doors are closed:
+	- Locate two vertically oriented buttons and press the top one 
+	- When elevator doors open, move forward into center of elevator
+- Otherwise:
+	- Move forward into center of elevator
+- If there are multiple buttons on the wall in front of you:
+	- Press the button with "10" on it
+- Otherwise:
+	- Turn 90 degrees to the right, until multiple buttons are in front of you
+	- Press the button with "10" on it
+- If the elevator doors are in front of you
+	- Wait until elevator doors open
+- Otherwise:
+	- Turn until facing elevator doors
+	- Wait until elevator doors open
+- Move forward until completely outside of elevator
+
+
+Getting Out of Bed Algorithm
+
+- When distinct alarm on phone is heard:
+	- Stop sleeping
+	- Open your eyes
+	- Reach out, grasp phone:
+	- If you are not a morning person:
+		- Shut off alarm
+		- Drop phone
+		- Close eyes 
+		- Go back to sleep
+	- Otherwise:
+		- Turn off alarm along with any other subsequent alarms
+		- Place phone gently back down
+		- Sit up straight
+		- Wait 5 minutes
+		- Swing legs off bed
+		- Stand up
+		- Think positive
+

@@ -1,0 +1,39 @@
+body {
+  margin: 20px;
+  border-style: solid;
+  border-color: black;
+  padding: 20px;
+  font-family: garamond;
+  background-image: url("https://octodex.github.com/images/codercat.jpg");
+  background-repeat: repeat-x;
+}
+
+.column-1 {
+  display: inline-block;
+  width: 40%;
+  float: left;
+  background-color: blue;
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+}
+
+.column-2 {
+  display: inline-block;
+  width: 40%;
+  float: right;
+  background-color: red;
+  padding: 10px;
+  border-color: black;
+  border-style: solid;
+}
+
+footer {
+  display: block;
+  background-color: yellow;
+  clear: both;
+  border-color: black;
+  border-style: solid;
+  width: 50%;
+  
+}
