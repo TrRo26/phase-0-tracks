@@ -1,0 +1,57 @@
+BODY {
+	background: #d3d3d3;
+	margin: 30px;
+	padding: 15px;
+	border: 2px solid black;
+}
+#heading {
+	font-family: helvetica;
+	text-align: center;
+	letter-spacing:	5px;
+	color: #c1402c;
+	padding-top: 25px;
+}
+#subheading {
+	font-family: helvetica;
+	text-align: center;
+	font-weight: lighter;
+	font-size: 20px;
+	line-height: 5px;
+	color: aliceblue;
+}
+#summary {
+	margin-left: 60px;
+	margin-right: 60px;
+}
+#header {
+	display: block;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	height: 270px;
+	width: 592px;
+	background-image: url(http://www.intrawallpaper.com/static/images/City_Landscape_Background_B5hx2zA.jpg);
+	box-shadow: 0 0 8px 8px #d3d3d3 inset;
+}
+.cityname {
+	color: darkblue;
+	text-transform: uppercase;
+	text-shadow: ghostwhite 0 2px;
+	border: 1px solid black;
+	padding: 3px;
+	text-indent: 5px;
+	letter-spacing: 3px;
+}
+.reason-heading {
+	color: firebrick;
+	font-family: courier;
+}
+a {
+	color: darkblue;
+}
+a:visited {
+	color: maroon;
+}
+@media only screen and (max-device-width: 480px) {
+	#header {background-image: none;}
+}
