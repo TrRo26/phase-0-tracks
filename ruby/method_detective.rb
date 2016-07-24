@@ -4,36 +4,48 @@
 # When there's more than one suspect who could have
 # committed the crime, add additional calls to prove it.
 
-# "iNvEsTiGaTiOn".<???>
+#--------------------------------------------------------------------------------
+
+"iNvEsTiGaTiOn".swapcase
+"iNvEsTiGaTiOn".gsub(/..?/, &:capitalize) #Don't quite fully understand this one
+"iNvEsTiGaTiOn".scan(/..?/).map(&:capitalize) * '' #Don't quite fully understand this one
 # => “InVeStIgAtIoN”
 
-# "zom".<???>
+"zom".gsub(/[o]/, "oo")
+"zom".sub(/[o]/, "oo")
 # => “zoom”
 
-# "enhance".<???>
+"enhance".center(15)
 # => "    enhance    "
 
-# "Stop! You’re under arrest!".<???>
+"Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-# "the usual".<???>
+"the usual".replace "the usual suspects"
+"the usual" + " suspects"
+"the usual" << ' suspects'
 #=> "the usual suspects"
 
-# " suspects".<???>
+" suspects".insert(0, "the usual")
+" suspects".prepend("the usual")
 # => "the usual suspects"
 
-# "The case of the disappearing last letter".<???>
+"The case of the disappearing last letter".chop
+"The case of the disappearing last letter"[0...-1]
 # => "The case of the disappearing last lette"
 
-# "The mystery of the missing first letter".<???>
+"The mystery of the missing first letter"[1..-1]
 # => "he mystery of the missing first letter"
 
-# "Elementary,    my   dear        Watson!".<???>
+"Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
 
-# "z".<???>
-# => 122 
-# (What is the significance of the number 122 in relation to the character z?)
+"z".ord
+"z".sum
+# => 122
 
-# "How many times does the letter 'a' appear in this string?".<???>
+# (What is the significance of the number 122 in relation to the character z?)
+This is the ASCII html code number for the (lowercase) "z"
+
+"How many times does the letter 'a' appear in this string?".count "a"
 # => 4
