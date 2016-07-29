@@ -1,40 +1,41 @@
 
-def create_list(string)
+# Method to create a list that takes string
+# input: string of items separated by spaces (example: "carrots apples cereal pizza")
+# steps: 
+  # Create empty hash
+  # Split string by spaces in an array
+  # iterate through array making every element a key in the hash assign a beginning value of 1 for each key
+  # print the list to the console using other defined method
+# output: hash
+
+
+def create_list(string="")
   list = {}
   string = string.split
   
-  string.each{|item| 
+  string.each { |item| 
     list[item] = 1
     }
   
   printhash(list)
-  return list  
-  
+  #return list
+
 end
-# input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
-  #
-# Method to create a list that takes string 
-# Create empty hash
-# Split string by spaces in an array
-# iterate through array making every element a key in the hash assign a beginning value of 1 for each key
-  # print the list to the console [can you use one of your other methods here?]
-# output: hash
 
 # Method to add an item to a list
-# input: hash list, item name (as string) and optional quantity (as int)
+# input: hash 'list', item name (as string) and optional quantity (as int)
 # steps: add item and quantity to hash
 # output: hash
 
-def add_item(list, item)  # Always an argument an arg we accept
+def add_item(list, item)
   list[item] = 1 # gets.chomp
 end
   
-
-puts "What do you want to add to your list ?"
+=begin
+puts "What do you want to add to your list?"
 input = gets.chomp
 add_item(list, input)
-
+=end
 
 # Method to remove an item from the list
 # input: Hash and Item (key) to be removed 
@@ -62,4 +63,9 @@ Onions, qty: 1
 Ice Cream, qty: 4
 =end
 
+
 create_list("carrots apples cereal pizza")
+
+add_item(, "eggs")
+
+
