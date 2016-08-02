@@ -1,13 +1,14 @@
 
 # Method to create a list that takes string
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
-# steps: 
-  # Create empty hash
-  # Split string by spaces in an array
-  # iterate through array making every element a key in the hash assign a beginning value of 1 for each key
+# steps:
+  # [fill in any steps here]
+  # set default quantity
+  ### create empty hash
+  ### split string by spaces in an array
+  ### iterate through array making every element a key in the hash assign a beginning value of 1 for each key
   # print the list to the console using other defined method
 # output: hash
-
 
 def create_list(string="")
   list = {}
