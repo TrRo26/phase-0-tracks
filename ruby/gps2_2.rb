@@ -10,16 +10,21 @@
     # print the list to the console using other defined method
   # output: hash
 
-def create_list(string="")
+# ***** HINT: methods can accept other methods as arguments 
+# *****       methods can be called within other methods
+
+
+def create_list(string)
   list = {}
-  string = string.split
+  string = string.split 
 
   string.each { |item| 
     list[item] = 1
     }
 
-    printhash(list)
-    list
+  printhash(list)
+
+ list
 end
 
 # Method to add an item to a list
@@ -27,8 +32,9 @@ end
   # steps: add item and quantity to hash
   # output: hash
 
-def add_item(list, item)
-  list[item] = 1
+def add_item(list, item, qty)
+  list[item] = qty
+  list
 end
 
 # Method to remove an item from the list
@@ -38,6 +44,7 @@ end
 
 def remove_item(list, item)
   list.delete(item)
+  list
 end
 
 # Method to update the quantity of an item
@@ -47,6 +54,7 @@ end
 
 def update_quantity(list, item, qty)
   list[item] = qty
+  list
 end
 
 # Method to print a list and make it look pretty
@@ -65,14 +73,34 @@ end
 
 # DRIVER CODE
 
-#create_list("carrots apples cereal pizza")
-#add_item(create_list("carrots apples cereal pizza"), "eggs")
-#remove_item(create_list("carrots apples cereal pizza"), "pizza")
-#update_quantity(create_list("carrots apples cereal pizza"), "pizza", 6)
+#Create a new list
+list = create_list("Carrots Cereal Donuts")
 
-create_list("Lemonade Tomatoes Onions IceCream")
-#update_quantity(create_list("Lemonade Tomatoes Onions IceCream"), "Lemonade", 2)
-#update_quantity(create_list("Lemonade Tomatoes Onions IceCream"), "Tomatoes", 3)
-#update_quantity(create_list("Lemonade Tomatoes Onions IceCream"), "IceCream", 4)
-#remove_item(create_list("Lemonade Tomatoes Onions IceCream"), "Lemonade")
+# Add the following items to your list
+  # Lemonade, qty: 2
+  # Tomatoes, qty: 3
+  # Onions, qty: 1
+  # Ice Cream, qty: 4
+add_item(list, "Lemonade", 2)
+#printhash(list)
+add_item(list, "Tomatoes", 3)
+#printhash(list)
+add_item(list, "Onions", 1)
+#printhash(list)
+add_item(list, "Ice Cream", 4)
+#printhash(list)
+
+# Remove the Lemonade from your list
+remove_item(list, "Lemonade")
+#printhash(list)
+
+# Update the Ice Cream quantity to 1
+update_quantity(list, "Ice Cream", 1)
+#printhash(list)
+
+# Print out your list (Is this readable and nice looking)?
+printhash(list)
+
+
+
 
