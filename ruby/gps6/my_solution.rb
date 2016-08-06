@@ -122,6 +122,19 @@ end
 #=======================================================================
 # Reflection Section
 
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # One uses strings (keys) and hash rockets (assigning values) and the nested hash uses symbols (defined as key with symbol at the end 'word:')
+  # They essesntially do the same thing but there are some various limitations, such as you can assign an integer as a key
+  # with a hash rocket but not with a symbol
+# What does require_relative do? How is it different from require?
+  # See top of file - question was asked and answered there.
+# What are some ways to iterate through a hash?
+  # Using the each method, you can iterate through a hash selecting only the key or value or both
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # Mainly just that they were repetative. The same 3 were used.
+# What concept did you most solidify in this challenge?
+  # Refactoring. It was very helpful as it is easier than writing code from scratch but still allows
+  # for creativity and problem solving.
 
 
 
