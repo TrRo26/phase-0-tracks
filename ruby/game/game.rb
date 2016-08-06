@@ -16,21 +16,18 @@
 
 # Create new class
 class Game
-	attr_reader :the_word
-	attr_accessor :is_over
-
-#@the_word = @@user_word.word_adjust
+	attr_reader #:user_word
+	attr_accessor #:the_word
 
 # Define initial characteristics and game word to be guessed
 	def initialize
-		@user_word = ""
-		#@the_word = ""
-		@the_word_blank = "_ _ _ _ _"
-		#@guess_allowed = 8
+		@@user_word = ""
+		@the_word = ""
+		@the_word_blank #= @user_word   # .method to equal "_ _ _ _ _"
 		@guess_num = 0
 		#@is_over = false
 		@letters_guessed = []
-		puts @the_word_blank
+		@the_word_blank
 	end
 
 # Create method that accepts a guess and compares to word
@@ -54,37 +51,35 @@ class Game
 
 	end
 
-# Create method that takes inputed word and returns in correct format
-	def word_adjust   #@the_word = 
-		@user_word.each do { |x| 
-			x + " " 
-		}
-		end
-		p @the_word
+# Def method that adds spaces to user word
+	@@user_word.to_a.each do |x|
+		temp = []
+		temp << x + " "
+		@the_word = temp.join
 	end
 
-# Create method that sets number of guesses allowed by word length
-	#def word_length
-	#	word.length.times do
-	#		print "_"
-	#	end
-	#end
+# Def method that changes user input word to blanks
+	def user_word_to_blanks   #@the_word = 
+		#@user_word.each do { |x| 
+		#	x + " " 
+		#}
+		#end
+		#p @the_word
+	end
 
 end
 
 # USER INTERFACE / DRIVER CODE
 
-new_game = Game.new
-
 puts "\nWelcome to the unnamed and much crappier version of the classic game, Hangman!"
 puts "Player 1, please discretely enter a word:"
 
-@user_word = gets.chomp
+new_game = Game.new
 
-new_game.word_adjust
+@@user_word = gets.chomp
 
 puts "Player 2, here is your word to guess. Best of luck!\n"
-puts ""
+p @the_word
 
 
 # TEST CODE 
