@@ -9,8 +9,25 @@ function reverse(x) {
   	for (var i = x.length - 1; i >= 0; i--)
     	p += x[i];
 // print the string
-	console.log(p)
+	console.log(p);
+	return p
 }
 
+// DRIVER CODE
+
 // call the function
-reverse("hello")
+var first = (reverse("hello"))
+
+// test for non-five characters
+var first = (reverse("hi"))
+
+// test to see if variable prints correctly
+console.log(first)
+
+// conditional test
+if (first.length == 5) {
+	console.log("Your word is 5 characters!");
+} else {
+	console.log("Your word is NOT 5 characters!");
+}
+
