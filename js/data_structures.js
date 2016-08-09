@@ -27,7 +27,8 @@ console.log(object);
 // with it.
 
 function Car(make, model, carColor) {
-	console.log("New car:", this)
+	console.log("")
+	console.log("Make new car...");
 
 	this.make = make
 	this.model = model
@@ -38,13 +39,21 @@ function Car(make, model, carColor) {
 	console.log("Car initialization complete.");
 }
 
-console.log("Make new car...");
-var newCar = new Car("Toyota", "Preus", "red");
+// DRIVER CODE
+
+var newCar = new Car("Toyota", "Prius", "red");
 console.log(newCar);
-console.log("Car can speed:");
+console.log("This car can move:");
 newCar.speed();
 console.log("----");
 
+var newCar2 = new Car("Pontiac", "Aztec", "green")
+console.log(newCar);
+console.log("----");
+
+var newCar3 = new Car ("Chrysler", "PT Cruiser", "orange")
+console.log(newCar);
+console.log("----");
 
 
 
