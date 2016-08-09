@@ -1,54 +1,70 @@
-/*n algos.js, write a function that takes an array of words or phrases and returns the 
-longest word or phrase in the array. So if we gave your function the array of 
-["long phrase","longest phrase","longer phrase"], it would return "longest phrase". 
-This is a logical reasoning challenge, so try to reason through this based on what you 
-already know, rather than Googling the fanciest solution or looking up built-in sorting 
-functions. Note that "some string".length will do what you expect in JS.
-Add driver code that tests your function on a few arrays.
+// ALGOS EXERCISE
+
+// ==============================================================================
+// REQUIREMENTS
+/*
+	[This is a logical reasoning challenge, so try to reason through this based 
+	on what you already know, rather than Googling the fanciest solution or 
+	looking up built-in sorting functions. Note that "some string".length will 
+	do what you expect in JS.]
+
+- Write a function that takes an array of words or phrases and returns the 
+longest word or phrase in the array.
+
+- Add driver code that tests your function on a few arrays.
 */
+// ==============================================================================
+// BUSINESS LOGIC
 
 // Create an array
-var words = ["hi", "hello there", "how are you today", "salutations"];
+var phrases1 = ["Hi!", "Hello there!", "How are you today!", "Salutations!"];
+var phrases2 = ["What an amazingly long sentence!", "This is too short.", "How about this one?"];
+var phrases3 = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]
 
-// Create a function 
+// Create a function
 function Lw(array) {
-	console.log("Array:", this)
-	this.array = array
+	// Print out the array of phrases
+	console.log("---------------")
+	console.log("Your phrases:", array)
+	console.log("")
 
-// create a nested function that loops though each phrase of the array
+	var long = ""
+
+	// Create function to determine length of each phrase by looping through array
 	this.find = function() {
-		var num = 0;
-		var long; {
-// set the number of loops
-		for var (i = 0; i < array.length; i++) {
-			if array[i].length > num {
-				var num = array[i].length;
-				long = arr[i];      //(var x = array[i].length;
+		// Set the number of loops
+		for (var i = 0; i < array.length; i++) {
+			// Print length of array element
+			console.log("Phrase " + (i+1) + " is " + array[i].length + " characters long.");
+			// If longer than set variable, re-assign element string to variable
+			if ((array[i].length) >= long.length) {
+				long = (array[i]);
+			}
 		}
-			
-// find the length of each element in the array
-			console.log(i);
-// print the longest element
-		}
+		// Print the longest phrase
+		console.log("")
+		console.log("In case you can't count, the longest (or tied for longest) phrase is:", long);
+		console.log("---------------")
 	}
+}
 
+// ==============================================================================
 // DRIVER CODE
 
-var here = new Lw(words);
-console.log(here);
-here.find();
+// Call an instance of the function with the defined array
+var greetings = new Lw(phrases1);
+greetings.find()
+
+var nonsense = new Lw(phrases2);
+nonsense.find()
+
+var numbers = new Lw(phrases3)
+numbers.find()
 
 
+// ==============================================================================
+// TEMPORARY/REFERENCE CODE
 /*
-var str = "Loop over me!";
 
-// Look at line 8:
-// We initialize our counter, set its "while" condition, 
-// and give the increment command that should happen 
-// after each iteration of the loop -- 
-// all in one tight line of code!
-for (var i = 0; i < str.length; i++) {
-	console.log(str[i]);
-}
 
 */
