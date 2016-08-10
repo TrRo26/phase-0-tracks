@@ -39,7 +39,7 @@ function Lw(array) {
 		// Set the number of loops
 		for (var i = 0; i < array.length; i++) {
 			// Print length of array element
-			console.log("Phrase " + (i+1) + " is " + array[i].length + " characters long.");
+			console.log("Phrase " + (i + 1) + " is " + array[i].length + " characters long.");
 			// If longer than set variable, re-assign element string to variable
 			if ((array[i].length) >= long.length) {
 				long = (array[i]);
@@ -48,7 +48,7 @@ function Lw(array) {
 		// Print the longest phrase
 		console.log("")
 		console.log("In case you can't count, the longest (or tied for longest) phrase is:", long);
-		console.log("---------------")
+		return ""
 	}
 }
 
@@ -72,95 +72,96 @@ function Share(objOne, objTwo) {
 		} else { 
 			var final2 = false;
 		}
-		// If any matches were found return true, otherwise false
-		if (final1 || final2 == true) {
-			console.log("Found a match: value =", true)
-		} else { 
-			console.log("Did not find a match: value =", false)
-			break
-		}
+	}
+	// If any matches were found return true, otherwise false
+	if (final1 || final2 == true) {
+		console.log("Found a match: value =", true)
+	} else {
+		console.log("Did not find a match: value =", false)
 	}
 }
 
 // Create function that builds array of strings of varying length
 function BldArr(int) {
-	// Assign random number between 1 and 26 to variable
-	var randAlph = (Math.floor((Math.random() * 26) + 1));
-	// Assign random number between 1 and 10 to variable
-	var randWL = (Math.floor((Math.random() * 10) + 1));
+	// Assign alphabet to variable
 	var alph = "abcdefghijklmnopqrstuvwxyz";
-	var strings = []
-	var word = ""
-
-	// Loop through alphabet random number of times between 1 and 10, choosing a letter each time
-
-	/*
-	For (var i = 0, i < int, i++) {
-		For (var i = 0, i < randWL, i++) {
-			var word = randAlph + randAlph
+	// Create array for random words
+	var strings = [];
+	// Initiate loop of declared number of times
+	for (var i = 0; i < int; i++) {
+		// Create variable for random word
+		var word = "";
+		// Generate random number (between 1 and 10)
+		var randWL = (Math.floor((Math.random() * 10) + 1));
+		// Loop that number of times and add each new character to variable
+		for (var x = 0; x < randWL; x++) {
+			word = word + alph[Math.floor(Math.random() * alph.length)]; 
 		}
+		// Add word to array
+		strings.push(word)
 	}
-*/
-	console.log(randWL)
-	console.log(alph[randAlph])
-	
-	//alph[randAlph]
+	// Print array of random words
+	console.log(strings);
+	return strings
 }
-
-
-/*
-- Write a function that takes an integer for length, and builds and returns an 
-array of strings of the given length. 
-So if we ran your function with an argument of 3, we would get an array of 
-3 random words back (the words don't have to be actual sensical English words 
--- "nnnnfph" totally counts). The words should be of randomly varying length, 
-with a minimum of 1 letter and a maximum of 10 letters. (This involves a new 
-trick, generating a random number, that you'll have to look up, but the solution 
-on how to do so is relatively straightforward.)
-
-- Add driver code that does the following 10 times: generates an array, 
-prints the array, feeds the array to your "longest word" function, and prints 
-the result.
-
-*/
 
 // ==============================================================================
 // DRIVER CODE
 
+//RELEASE 0
+	console.log("------------------------------")
+	console.log("RELEASE 0")
+	console.log("------------------------------")
+	
+	// Create arrays for release 0
+	var phrases1 = ["Hi!", "Hello there!", "How are you today!", "Salutations!"];
+	var phrases2 = ["What an amazingly long sentence!", "This is too short.", "How about this one?"];
+	var phrases3 = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+
+	// Run function with defined arrays to test
+	var greetings = new Lw(phrases1);
+	greetings.find()
+	var nonsense = new Lw(phrases2);
+	nonsense.find()
+	var numbers = new Lw(phrases3)
+	numbers.find()
+
+//RELEASE 1
+	console.log("------------------------------")
+	console.log("RELEASE 1");
+	console.log("------------------------------")
+	
+	// Define two Objects with multiple key-value pairs to compare
+	var collection1 = {artist: 'Beatles', popularity: 'high'};
+	var collection2 = {artist: 'Rolling Stones', popularity: 'high'};
+
+	// Run function with defined arrays to test 
+	Share(collection1, collection2);
+
 // RELEASE 2
+	console.log("------------------------------")
+	console.log("RELEASE 2")
+	console.log("------------------------------")
+	
+	// Run function with various integers (# of words in returned array) to test
+	BldArr(3);
+	BldArr(7);
+	BldArr(15);
 
-what = new BldArr(3)
-
-
-/* 
-RELEASE 0
-
-// Create arrays for release 0
-var phrases1 = ["Hi!", "Hello there!", "How are you today!", "Salutations!"];
-var phrases2 = ["What an amazingly long sentence!", "This is too short.", "How about this one?"];
-var phrases3 = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"]
-
-// Call an instance of the function with the defined arrays
-var greetings = new Lw(phrases1);
-greetings.find()
-
-var nonsense = new Lw(phrases2);
-nonsense.find()
-
-var numbers = new Lw(phrases3)
-numbers.find()
-
-
-RELEASE 1
-
-// Define two Objects with multiple key-value pairs to compare
-var collection1 = {artist: 'Beatles', popularity: 'low'};
-var collection2 = {artist: 'Rolling Stones', popularity: 'high'}
-
-// Create a new instance of Share to test the function
-var test = new Share(collection1, collection2)
-
-*/
+	// Add driver code that generates & prints array, feeds array to 
+	// "longest word" function and prints result (10 times)
+	console.log("")
+	// Loop 10 times
+	for (x = 0; x < 10; x++) {
+		// Generate an array
+		var ex1 = new BldArr(3);
+		// Prints array
+		console.log(ex1);
+		// Pass array through "longest word" function
+		var ex2 = new Lw(ex1);
+		// Print longest word
+		console.log(ex2.find())
+	}
 
 // ==============================================================================
 
