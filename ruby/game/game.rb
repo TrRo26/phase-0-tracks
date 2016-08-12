@@ -21,7 +21,6 @@ class Game
 
 # Define initial characteristics and game word to be guessed
 	def initialize
-		@@user_word = ""
 		@the_word = ""
 		@the_word_blank #= @user_word   # .method to equal "_ _ _ _ _"
 		@guess_num = 0
