@@ -18,25 +18,10 @@ handle user errors.
 Print the latest version of the hash, and exit the program.
 =end
 
-# BUSINESS LOGIC
 # ---------------------------
 
-# Create hash of user data with correct datatype
- user_data = {
- 	name: "",
- 	age: "",
- 	number_children: "",
- 	decor_theme: "",
- 	price_ceiling: "",
- 	is_difficult: false
- }
-
-
-# Create method that updates hash value (or accepts 'none' to skip)
-
-
-# USER INTERFACE
-# ---------------------------
+# Create hash for user data
+ user_data = {}
 
 # User enters info
 puts ""
@@ -44,50 +29,44 @@ puts "Please enter client data:"
 puts ""
 puts "Name:"
 user_data[:name] = gets.chomp
+puts ""
 puts "Age:"
 user_data[:age] = gets.chomp.to_i
+puts ""
 puts "Number of children that client has:"
 user_data[:number_children] = gets.chomp.to_i
+puts ""
 puts "Prefered decor theme:"
 user_data[:decor_theme] = gets.chomp
+puts ""
 puts "Price ceiling:"
 user_data[:price_ceiling] = gets.chomp.to_i
-puts "Likely customer will be difficult:"
-user_data[:is_difficult] = gets.chomp     #Is there a to_b for boolean?
+puts ""
+puts "Likely customer will be difficult ('true' or 'false'):"
+user_data[:is_difficult] = gets.chomp
+if user_data[:is_difficult] == "true"
+	user_data[:is_difficult] = true
+else
+	user_data[:is_difficult] = false
+end
 puts "**End of client data collection**"
 puts ""
-puts "Would you like to change anything? (if not, type 'none')"
-
-change = gets.chomp.to_sym
-user_data[change]
-
 puts user_data
+puts ""
 
-# User prompted to update anything if needed (otherwise types 'none')
+# User promted to change items if needed
+puts "Would you like to change anything? If so, what category? (if not, type 'none')"
+update = gets.chomp
 
-
-# DRIVER CODE
-# ---------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# If updates requested, updates. If none entered, exits.
+if update == "none"
+	puts user_data
+else
+	update = update.to_sym
+	puts "What would you like to update this category to?"
+	user_data[update] = gets.chomp
+	puts user_data
+end
 
 
 
