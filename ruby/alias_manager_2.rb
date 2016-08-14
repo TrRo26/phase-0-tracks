@@ -10,20 +10,33 @@ consonant in the alphabet. So 'a' would become 'e', 'u' would become 'a',
 and 'd' would become 'f'.
 =end
 
+# BUSINESS LOGIC
+# ---------------
 
 # Define a method that takes a string as a perameter
 def spy_name(real_name)
 	# replace vowels with next vowel
 	real_name.gsub!(/[aeiou]/, "a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a") 
+	# reverse first and last name
+	real_name = real_name.split.reverse
+	real_name = real_name.join
 	# split name into individual elements contained in an array
 	real_name = real_name.split(//)
+	p real_name
 	# advance each letter to the next in the alphabet
 	real_name.each do |x|
-		x.next!
+		if x == "a" || x == "e" || x == "i" || x == "o" || x == "u"
+			next
+		else
+			x.next!
+		end
 	end
 	# join the array together
 	real_name = real_name.join
 end
+
+# USER INTERFACE & DRIVER CODE
+# ---------------
 
 # Create an array to store code names
 database = []
