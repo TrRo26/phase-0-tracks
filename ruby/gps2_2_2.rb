@@ -12,24 +12,25 @@ def create_list(item)
   		g_list[i] = 1
   	end
   	# print the list to the console [can you use one of your other methods here?]
-  	p g_list
+  	print_list(g_list)
   	# output: hash of items and quantities
   	return g_list
 end
 
-wed_list = create_list("carrots apples cereal pizza")
+# test create_list method
+# wed_list = create_list("carrots apples cereal pizza")
 
 # Method to add an item to a list
 # input: item name
-def add_item(g_list, item)
+def add_item(g_list, item, qty=1)
 	# add item to list
-	g_list[item] = 1
+	g_list[item] = qty
 	# output: updated hash list
-	p g_list
 	return g_list
 end
 
-add_item(wed_list, "chuck roast")
+# test add_item method
+# add_item(wed_list, "chuck roast")
 
 # Method to remove an item from the list
 # input: key item by name
@@ -42,12 +43,12 @@ def remove_item(g_list, item)
 		puts "Sorry, item not found."
 	end
 	# output: updated hash list
-	p g_list
 	return g_list
 end
 
-remove_item(wed_list, "apples")
-remove_item(wed_list, "lettuce")
+# test remove_item method
+# remove_item(wed_list, "apples")
+# remove_item(wed_list, "lettuce")
 
 # Method to update the quantity of an item
 # input: hash, item and quantity
@@ -61,12 +62,12 @@ def update_quantity(g_list, item, qty)
 		puts "Sorry, item not found."
 	end
 	# output: updated hash list
-	p g_list
 	return g_list
 end
-	
-update_quantity(wed_list, "donuts", 5)
-update_quantity(wed_list, "carrots", 15)
+
+# test update_quantity method
+# update_quantity(wed_list, "donuts", 5)
+# update_quantity(wed_list, "carrots", 15)
 
 # Method to print a list and make it look pretty
 # input: most updated hash list
@@ -81,11 +82,34 @@ def print_list(g_list)
   	end
 end
 
-print_list(wed_list)
+# test print_list method
+# print_list(wed_list)
 
-# ==============================
+# =========================
+# RELEASE 3 TESTS
+# =========================
+
+# Create a new list
+thurs_list = create_list("Honey Butter Avocado")
+
+# Add specified items to the list
+add_item(thurs_list, "Lemonade", 2)
+add_item(thurs_list, "Tomatoes", 3)
+add_item(thurs_list, "Onions")
+add_item(thurs_list, "Ice Cream", 4)
+
+# Remove the Lemonade from the list
+remove_item(thurs_list, "Lemonade")
+
+# Update the Ice Cream quantity to 1
+update_quantity(thurs_list, "Ice Cream", 1)
+
+# Print the list
+print_list(thurs_list)
+
+# =========================
 # REFLECTION & COMMENTS
-# ==============================
+# =========================
 =begin
 
 - What did you learn about pseudocode from working on this challenge?
