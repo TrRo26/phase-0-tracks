@@ -52,7 +52,7 @@ class Santa
 	#	@age
 	# end
 
-	#d ef ethnicity
+	# def ethnicity
 	#	@ethnicity
 	# end
 end
