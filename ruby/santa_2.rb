@@ -67,13 +67,22 @@ list_of_genders.length.times do |i|
   santas << Santa.new(list_of_genders[i], list_of_ethnicities[i])
 end
 
-puts santas
-
 # test above methods by initializing a Santa class instance and calling its methods
-charles = Santa.new("x", "year")
+charles = Santa.new("x", "y")
 charles.speak
 charles.eat_milk_and_cookies("chocolate chip cookie")
 charles.celebrate_birthday
 charles.get_mad_at("Vixen")
+
+# Create program to create lots of Santas
+# Create your Santas with a randomly selected gender and a randomly selected ethnicity
+100.times do |x|
+	random_gender = list_of_genders.sample
+	random_ethnicity = list_of_ethnicities.sample
+	# Set your new Santa's age to a random number between 0 and 140
+	age = (0..140).to_a.sample
+	Santa.new(random_gender, random_ethnicity)
+	puts "A Santa with a gender of #{random_gender}, an ethnicity of #{random_ethnicity} and an age of #{age} has been created."
+end
 
 
