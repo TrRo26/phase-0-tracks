@@ -1,11 +1,8 @@
-# Design (as opposed to actually building) a class that has...
-# 	- at least three attributes (using at least two data types) whose values will 
-# 	  vary from instance to instance (example: age)
-# 	- at least three methods, at least one of which takes an argument
 
 # PSEUDOCODE
+# --------------------------
 
-# Will be creating a BEER class with two attributes that vary from instance to 
+# Will be creating a BEER class with three attributes that vary from instance to 
 # instance and will define three methods, one of which takes an argument.
 
 # define a BEER class
@@ -17,6 +14,33 @@
 	# define a method that updates the beers ranking by taking an argument
 	# define a method that prints that a cab home is needed
 
+# BUSINESS LOGIC
+# --------------------------
 
+class Beer
+	attr_reader :style, :state_of_origin
+	attr_accessor :ranking
 
+	def initialize
+		@style = ale
+		@state_of_origin = Illinois
+		@ranking = 0
+	end
+
+	def take_a_sip
+		puts "*takes a sip*"
+	end
+
+	def ranking(score)
+		@ranking = score
+	end
+
+	def cab_home
+		puts "*hails cab home*"
+	end
+
+end
+
+# DRIVER CODE
+# --------------------------
 
