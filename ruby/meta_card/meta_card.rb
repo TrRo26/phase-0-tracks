@@ -47,22 +47,27 @@ Features that may be added at a later date:
 # BUSINESS LOGIC
 #-------------------------------------------------------------------------------
 
-def user_name
-
-end
-
-def card
-
-end
-
+# define a method that takes name of card and number applying for as arguments
 def approval(card_name, request_num)
+	@approved = false
+	@card_name = card_name
+	@request_num = request_num
 	num_cards = card_name.length * 2
-	if request_num >= num_cards
-		puts "I'm sorry, you have been denied."
+	if request_num.to_i >= num_cards
+		puts "I'm sorry, your request for #{request_num} cards has been denied. Please try requesting fewer cards."
 	else
-		puts "Congratulations! You have been approved!"
+		puts "Congratulations! You have been approved for #{request_num} #{card_name} cards!"
+		@approved = true
 	end
 end
+
+def play_card
+	puts "Please describe your reason for playing this card:"
+	@reason = gets.chomp
+	puts "You have used 1 of your #{@request_num} #{@card_name} cards."
+	puts "See you when you recieve the next social invitation you want to weasle your way out of!"
+end
+
 
 #-------------------------------------------------------------------------------
 # USER INTERFACE
@@ -74,7 +79,15 @@ puts "Welcome! Please enter the metaphorical card you would like to apply for (p
 card_name = gets.chomp
 puts "How many cards would you like to apply for?"
 num_cards = gets.chomp
-
+puts "Assessing your request..."
+approval(card_name, num_cards)
+if @approved == true
+	puts "Would you like to play one of your cards (y/n)?"
+	unless gets.chomp.downcase == "y"
+		abort("See you when you recieve the next social invitation you want to weasle your way out of!")
+	end
+end
+play_card
 
 #-------------------------------------------------------------------------------
 # DRIVER CODE & TEST CODE
