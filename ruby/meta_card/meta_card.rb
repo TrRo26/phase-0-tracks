@@ -44,6 +44,30 @@ Features that may be added at a later date:
 =end
 
 #-------------------------------------------------------------------------------
+# DATABASE
+#-------------------------------------------------------------------------------
+
+# require gems
+require 'SQLite3'
+
+# create SQLite3 database
+meta_db = SQLite3::Database.new("meta_card_db.db")
+meta_db.results_as_hash = true
+
+# 
+create_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS meta_card_db(
+    id INTEGER PRIMARY KEY,
+    card_name VARCHAR(255),
+    num_cards INT,
+    reason VARCHAR(255)
+  )
+SQL
+
+#
+meta_db.execute(create_table_cmd)
+
+#-------------------------------------------------------------------------------
 # BUSINESS LOGIC
 #-------------------------------------------------------------------------------
 
@@ -65,7 +89,12 @@ def play_card
 	puts "Please describe your reason for playing this card:"
 	@reason = gets.chomp
 	puts "You have used 1 of your #{@request_num} #{@card_name} cards."
-	puts "See you when you recieve the next social invitation you want to weasle your way out of!"
+	puts "This information has been recorded."
+	puts "See you at the next social invitation you want to weasle your way out of!"
+end
+
+def record_card(db, card_name, num_cards, reason)
+	meta_db.execute("INSERT INTO meta_card_db (card_name, num_cards, reason) VALUES (?, ?, ?)", [card_name, num_cards, reason])
 end
 
 
@@ -84,7 +113,7 @@ approval(card_name, num_cards)
 if @approved == true
 	puts "Would you like to play one of your cards (y/n)?"
 	unless gets.chomp.downcase == "y"
-		abort("See you when you recieve the next social invitation you want to weasle your way out of!")
+		abort("See you at the next social invitation you want to weasle your way out of!")
 	end
 end
 play_card
