@@ -1,0 +1,8 @@
+1. In the welp directory, create a file called queries.txt. Once you've figured out the queries below, paste them into queries.txt, along with the output from your database.
+
+2. You've joined two tables before. How do you join three?
+There are some repetitive columns if we choose to view all fields. 
+
+3. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+4. How do you view the data of all three tables for just one particular business? 
