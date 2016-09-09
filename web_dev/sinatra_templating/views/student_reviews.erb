@@ -1,0 +1,19 @@
+<html>
+<head>
+	<title>Student Reviews</title>
+</head>
+<body>
+	<h1></h1>
+	<p><b>Reviews:</b></p>
+	<p>Click <a href="students/review_form">here</a> to review a student by Name.</p>
+
+	<ul>
+    	<% @reviews.each do |reviews| %>
+      		<li>Name: <%= reviews['name'] %>, Comment: <%= reviews['comment'] %></li>
+   	 	<% end %>
+  	</ul>
+
+  	
+
+</body>
+</html>
