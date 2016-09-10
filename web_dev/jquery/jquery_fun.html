@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">></script>
+	<title>My First JQuery Experience</title>
+	<script>
+		$(document).ready(function(){
+			
+			$("p:first").click(function(){
+				$("p:first").fadeOut(2500);
+			});
+
+			$("p:last").hover(function(){
+				$("p:last").css("background-color", "lightblue");
+			});
+
+		});
+
+	</script>
+
+</head>
+<body>
+
+	<h1>My First JQuery Experience</h1>
+
+	<h2>I am hoping that I have learned enough JQuery that the following actions will create results!</h2>
+
+	<p>Click me!</p>
+
+	<p>Hover over me!</p>
+
+</body>
+</html>
